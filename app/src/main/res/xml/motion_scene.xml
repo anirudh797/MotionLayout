@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <ConstraintSet android:id="@+id/start">
+    <Constraint
+      android:id="@+id/laserFire"
+      android:layout_width="@dimen/laser_width"
+      android:layout_height="@dimen/laser_height"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/trooper" />
+
+    <Constraint
+      android:id="@+id/blackGlove"
+      android:layout_width="@dimen/laser_width"
+      android:layout_height="@dimen/laser_height"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintBottom_toTopOf="@+id/yoda" />
+
+
+  </ConstraintSet>
+
+  <ConstraintSet android:id="@+id/end">
+    <Constraint
+      android:id="@+id/laserFire"
+      android:layout_width="@dimen/laser_width"
+      android:layout_height="@dimen/laser_height"
+      app:layout_constraintBottom_toTopOf="@id/yoda"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+    <Constraint
+      android:id="@+id/blackGlove"
+      android:layout_width="@dimen/laser_width"
+      android:layout_height="@dimen/laser_height"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/trooper"
+
+      />
+
+  </ConstraintSet>
+
+  <Transition
+    app:constraintSetEnd="@+id/end"
+    app:constraintSetStart="@+id/start"
+    app:duration="2000">
+
+    <OnClick
+      app:clickAction="toggle"
+      app:targetId="@id/trooper" />
+
+    <OnSwipe
+      app:touchAnchorId="@id/blackGlove" />
+
+    <KeyFrameSet>
+      <KeyPosition
+        app:framePosition="70"
+        app:keyPositionType="parentRelative"
+        app:motionTarget="@id/laserFire" />
+
+      <KeyAttribute
+        android:alpha="0.0"
+        app:framePosition="100"
+        app:motionTarget="@id/laserFire" />
+
+      <KeyAttribute
+        android:alpha="0"
+        app:framePosition="70"
+        app:motionTarget="@id/laserFire" />
+
+
+      <KeyAttribute
+        app:framePosition="70"
+        android:alpha="0"
+        android:rotation="0"
+        app:motionTarget="@id/blackGlove"
+        />
+
+      <KeyAttribute
+        app:framePosition="100"
+        android:alpha="0"
+        android:rotation="0"
+        app:motionTarget="@id/blackGlove"
+        />
+
+
+      <KeyAttribute
+        app:framePosition="60"
+        app:motionTarget="@id/message"
+        android:alpha="0.0" />
+
+<!--      <Custom-->
+
+      <KeyAttribute
+        android:alpha="1.0"
+        app:framePosition="100"
+        app:motionTarget="@id/message" />
+    </KeyFrameSet>
+
+  </Transition>
+
+</MotionScene>

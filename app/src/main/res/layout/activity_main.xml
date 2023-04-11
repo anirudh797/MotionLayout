@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/colorBackground"
+  app:layoutDescription="@xml/motion_scene"
+  app:motionDebug="SHOW_PATH"
+  tools:context=".MainActivity">
+
+  <ImageView
+    android:id="@+id/trooper"
+    android:layout_width="@dimen/trooper_size"
+    android:layout_height="@dimen/trooper_size"
+    android:contentDescription="@string/trooper"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:srcCompat="@drawable/trooper" />
+
+  <androidx.appcompat.widget.AppCompatImageView
+    android:id="@+id/laserFire"
+    android:layout_width="@dimen/laser_width"
+    android:layout_height="@dimen/laser_height"
+    android:rotation="90"
+    android:contentDescription="@string/laser_fire"
+    android:scaleType="fitCenter"
+    android:foreground="@drawable/ic_rase"
+     />
+
+  <ImageView
+    android:id="@+id/message"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:scaleType="fitCenter"
+    android:visibility="gone"
+    android:src="@drawable/ic_bam"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <ImageView
+    android:id="@+id/blackGlove"
+    android:layout_width="@dimen/saber_width"
+    android:layout_height="@dimen/saber_height"
+    android:contentDescription="@string/light_saber"
+    android:scaleType="fitCenter"
+    app:srcCompat="@drawable/ic_black_glove" />
+
+  <ImageView
+    android:id="@+id/yoda"
+    android:layout_width="@dimen/yoda_width"
+    android:layout_height="@dimen/yoda_height"
+    android:contentDescription="@string/yoda"
+    android:scaleType="fitCenter"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:srcCompat="@drawable/yoda" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
