@@ -26,7 +26,7 @@
     android:rotation="90"
     android:contentDescription="@string/laser_fire"
     android:scaleType="fitCenter"
-    android:foreground="@drawable/ic_rase"
+    android:foreground="@drawable/ic_round"
      />
 
   <ImageView
